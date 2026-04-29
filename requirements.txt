@@ -1,0 +1,4 @@
+pandas==3.0.2
+plotly==6.7.0
+Requests==2.33.1
+streamlit==1.56.0
