@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import requests
 import google.generativeai as genai
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 # --- 1. 설정 및 API 키 ---
 WEATHER_API_KEY = st.secrets["WEATHER_API_KEY"]
