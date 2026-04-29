@@ -91,7 +91,9 @@ with st.sidebar:
 usage_kwh_base = estimate_usage(bill)
 current_month_idx = datetime.now().month - 1
 total_expected_gen_today = MONTHLY_INSOLATION[current_month_idx] * pv_cap * 0.8 * az_map[azimuth] * w_coeff
-cur_hour = datetime.now().hour
+kst = timezone(timedelta(hours=9))
+now_kst = datetime.now(kst)
+cur_hour = now_kst.hour
 current_power_kw = (total_expected_gen_today / 12) if (7 <= cur_hour <= 19) else 0.0
 
 lmi = min((50.0 if "주간" in lifestyle else 25.0) + (ess_cap/pv_cap*15.0 if pv_cap>0 else 0), 95.0)
