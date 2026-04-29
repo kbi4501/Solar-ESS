@@ -6,9 +6,8 @@ import google.generativeai as genai
 from datetime import datetime
 
 # --- 1. 설정 및 API 키 ---
-WEATHER_API_KEY = "7760a64ea6836f25f76039806d6946e3"
-GEMINI_API_KEY = "AIzaSyBa-9OiX2PYo6eSE2s7NpnLE6wRomcPTHY"
-
+WEATHER_API_KEY = st.secrets["7760a64ea6836f25f76039806d6946e3"]
+GEMINI_API_KEY = st.secrets["AIzaSyBa-9OiX2PYo6eSE2s7NpnLE6wRomcPTHY"]
 # Gemini AI 설정
 genai.configure(api_key=GEMINI_API_KEY)
 ai_model = genai.GenerativeModel('gemini-1.5-flash-latest')
